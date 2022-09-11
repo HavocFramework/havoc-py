@@ -72,8 +72,6 @@ class Parser:
 
         length      = self.parse_int()
 
-        print( f"length => {length}" )
-
         buf         = self.buffer[ :length ]
         self.buffer = self.buffer[ length: ]
 
@@ -152,8 +150,6 @@ class AgentType:
     def download_file( self, agent_id: str, file_name: str, size: int, content: str ) -> None:
         ContentB64 = base64.b64encode( content.encode( 'utf-8' ) ).decode( 'utf-8' )
 
-        print( f"ContentB64: {ContentB64}" )
-
         self._Service_instance.Socket.send( 
             json.dumps( 
                 {
@@ -204,8 +200,6 @@ class AgentType:
         RandID : str   = str(uuid.uuid1())[6:]  
         Tasks  : bytes = b''
 
-        print( f"[*] RandID: {RandID}" )
-
         self._Service_instance.Socket.send(
             json.dumps(
                 {
@@ -224,7 +218,6 @@ class AgentType:
 
         while ( True ):
             if RandID in self._current_data:
-                print( "RandID is in current Data. break operation..." )
                 Tasks = self._current_data[ RandID ]
                 del self._current_data[ RandID ]
                 break

@@ -130,6 +130,7 @@ class AgentType:
     Version: str
     MagicValue: int
     Description: str
+    Arch = list[ str ]
     Formats = list[ dict ]
     Commands: list[ Command ]
     BuildingConfig = dict
@@ -312,6 +313,7 @@ class AgentType:
             "Name": self.Name,
             "MagicValue": hex( self.MagicValue ),
             "BuildingConfig": self.BuildingConfig,
+            "Arch": self.Arch,
             "Formats": self.Formats,
             "Author": self.Author,
             "Description": self.Description,

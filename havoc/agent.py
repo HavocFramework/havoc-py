@@ -3,7 +3,8 @@ import base64
 import json
 import struct
 import uuid
-
+import random
+import string
 from struct import pack, calcsize
 
 from black import out
@@ -198,7 +199,7 @@ class AgentType:
 
     def get_task_queue( self, AgentInfo: dict ) -> bytes:
         
-        RandID : str   = str(uuid.uuid1())[6:]  
+        RandID : str   = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(6))
         Tasks  : bytes = b''
 
         self._Service_instance.Socket.send(

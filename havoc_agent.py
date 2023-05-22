@@ -178,7 +178,7 @@ class Azazel(AgentType):
 def main():
     Havoc_Azazel = Azazel()
     Havoc_Service = HavocService(
-        endpoint="ws://192.168.0.148:40056/test",
+        endpoint="wss://192.168.0.148:40056/test",
         password="password1234"
     )
 

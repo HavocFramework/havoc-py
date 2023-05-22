@@ -7,6 +7,7 @@ from threading import Thread
 
 import websocket
 import json
+import ssl
 
 
 def build_request(head_type, body: dict) -> dict:
@@ -46,7 +47,7 @@ class HavocService:
             on_open=self.__ws_on_open
         )
 
-        Thread( target=self.Socket.run_forever ).start()
+        Thread( target=self.Socket.run_forever, kwargs={'sslopt': {'check_hostname': False, "cert_reqs": ssl.CERT_NONE}} ).start()
 
         while True:
             if self.Connected:

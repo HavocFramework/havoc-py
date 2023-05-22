@@ -277,7 +277,7 @@ class Talon(AgentType):
 def main():
     Havoc_Talon = Talon()
     Havoc_Service = HavocService(
-        endpoint="ws://192.168.0.148:40056/service-endpoint",
+        endpoint="wss://192.168.0.148:40056/service-endpoint",
         password="service-password"
     )
 

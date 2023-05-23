@@ -1,0 +1,6 @@
+black
+flask
+itsdangerous
+requests
+websocket
+websocket-client

@@ -3,7 +3,7 @@ from havoc.service import HavocService
 
 def main():
     havoc_service = HavocService(
-        endpoint="ws://192.168.0.148:40056/test",
+        endpoint="wss://192.168.0.148:40056/test",
         password="password1234"
     )
 
